@@ -2,6 +2,11 @@
 // В этом файле содержатся дополнительные или общие классы
 // -----------------------------------------------------------------------------
 
+section {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+
 .container {
   width: 100%;
   max-width: $container-max-width;
@@ -14,4 +19,8 @@
 .wrapper {
   display: flex;
   align-items: center;
+}
+
+.section-title {
+  margin-bottom: 60px;
 }
