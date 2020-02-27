@@ -45,7 +45,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <!-- Шрифты -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
   <!-- Стили -->
   <!-- build:css -->
   <link rel="stylesheet" href="styles/compiled/style.css" />
@@ -57,27 +57,26 @@
   <header id="header">
     <div class="container">
       <div class="wrapper">
-        <img src="img/logo/school-faculty.png" alt="" class="header-logo">
+        <a href="#promo">
+          <img src="img/logo/school-faculty.png" alt="" class="header-logo">
+        </a>
         <span class="header-title"></span>
         <nav class="menu">
           <ul class="nav">
             <li class="nav-item">
-              <a href="" class="nav-link">Об олимпиаде</a>
+              <a href="#promo" class="nav-link">Об олимпиаде</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Организаторы</a>
+              <a href="#partners" class="nav-link">Организаторы</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Документы</a>
+              <a href="#documents" class="nav-link">Документы</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Контакты</a>
+              <a href="#contact" class="nav-link">Контакты</a>
             </li>
             <li class="nav-item">
-              <a href="" class="nav-link">Спонсорам</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class="nav-link">Фото</a>
+              <a href="#gallery" class="nav-link">Фото</a>
             </li>
           </ul>
         </nav>
@@ -95,9 +94,9 @@
           <div class="promo-info">
             <h2 class="promo__subtitle">XII Всероссийская открытая геологичекая олимпиада</h2>
             <h1 class="promo__title">Земля и человек 2020</h1>
-            <time class="promo__date">17.04.2020 - 19.04.2020</time>
-            <p class="promo__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Злых собрал заголовок ведущими безорфографичный всемогущая продолжил выйти, букв подпоясал?</p>
-            <button class="button button--shadow promo__button">Подробнее</button>
+            <!-- <time class="promo__date">17.04.2020 - 19.04.2020</time> -->
+            <p class="promo__text">Целью Олимпиады является пропаганда знаний и развития интереса обучающихся в средних общеобразовательных учреждениях к наукам о Земле, профориентации юношества, выявления способных учащихся и привлечения их к поступлению в высшие учебные заведения по геологическому профилю.</p>
+            <button data-button-nav class="button button--shadow promo__button">Программа олимпиады</button>
           </div>
           <!-- /.promo-information -->
           <img src="img/logo/earth-and-human.png" alt="" class="promo__logo">
@@ -112,7 +111,7 @@
         <h2 class="section-title">Организаторы Олимпиады</h2>
         <div class="wrapper">
           <div class="partner__card">
-            <a class="partner__link" href="">
+            <a class="partner__link" href="http://www.rosnedra.gov.ru/" target="_blank">
               <img src="img/logo/rosnedra.png" alt="" class="partner__icon">
             </a>
             <h3 class="partner__title">Федеральное агентство по недропользованию <br> (РОСНЕДРА)</h3>
@@ -120,7 +119,7 @@
           <!-- /.partner__card -->
 
           <div class="partner__card">
-            <a class="partner__link" href="">
+            <a class="partner__link" href="https://mgri.ru/" target="_blank">
               <img src="img/logo/mgri.png" alt="" class="partner__icon partner__icon--important">
             </a>
             <h3 class="partner__title">Российский государственный геологоразведочный университет им. Серго Орджникидзе <br> (МГРИ)</h3>
@@ -128,7 +127,7 @@
           <!-- /.partner__card -->
 
           <div class="partner__card">
-            <a class="partner__link" href="">
+            <a class="partner__link" href="http://rosgeo.org/" target="_blank">
               <img src="img/logo/rosgeo.png" alt="" class="partner__icon">
             </a>
             <h3 class="partner__title">Общественная организация Российское геологическое общество <br> (РОСГЕО)</h3>
@@ -139,15 +138,15 @@
 
         <div class="wrapper">
           <div class="partner__card">
-            <a class="partner__link" href="">
+            <a class="partner__link" href="gorgeo.org" target="_blank">
               <img src="img/logo/gorgeo.png" alt="" class="partner__icon">
             </a>
-            <h3 class="partner__title">При содействии Горно-геологического общества <br> (РОО "ГТО")</h3>
+            <h3 class="partner__title">При содействии Горно-геологического общества <br> (РОО "ГГО")</h3>
           </div>
           <!-- /.partner__card -->
 
           <div class="partner__card">
-            <a class="partner__link" href="">
+            <a class="partner__link" href="https://www.geoland.ru/" target="_blank">
               <img src="img/logo/school-faculty.png" alt="" class="partner__icon">
             </a>
             <h3 class="partner__title">Организация олимпиады проводится силами Школьного факультета <br> (МГРИ)</h3>
@@ -163,10 +162,10 @@
       <div class="container">
         <h2 class="section-title">Документы</h2>
         <ul class="document-list">
-          <li class="document-list__item"><a class="document-list__link" href="">Положение о XII Всероссийской открытой геологичекой олимпиаде "Земля и Человек"</a></li>
-          <li class="document-list__item"><a class="document-list__link" href="">Пример оформления титульного листа рефера</a></li>
-          <li class="document-list__item"><a class="document-list__link" href="">Пример оформления титульного листа НИР/УИР</a></li>
-          <li class="document-list__item"><a class="document-list__link" href="">Список принятых работ</a></li>
+          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Vneshnee_polozhenie.pdf">Положение о XII Всероссийской открытой геологичекой олимпиаде "Земля и Человек"</a></li>
+          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Referat.pdf">Пример оформления титульного листа реферата</a></li>
+          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/NIR.pdf">Пример оформления титульного листа НИР/УИР</a></li>
+          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Spisok.docx">Список принятых работ</a></li>
         </ul>
       </div>
       <!-- /.container -->

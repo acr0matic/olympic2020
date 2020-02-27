@@ -1,5 +1,6 @@
 #promo {
   background-color: #f8f8f8;
+  background-size: cover;
 
   .wrapper {
     justify-content: space-between;
@@ -8,7 +9,7 @@
 
 .promo {
   &-info {
-    max-width: 50%;
+    max-width: 60%;
   }
 
   &__title {
@@ -20,17 +21,18 @@
   }
 
   &__text {
-    margin-top: 35px;
+    margin-top: 15px;
   }
 
   &__date {
-    margin-bottom: 15px;
+    display: inline-block;
+    margin: 5px 0;
     padding: 5px;
-    background-color: #ff8a6c;
+    background-color: #f3722d;
   }
 
   &__button {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   &__logo {
