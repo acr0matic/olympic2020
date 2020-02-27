@@ -24,6 +24,15 @@ p {
   line-height: 30px;
 }
 
+a {
+  color: #000000;
+}
+
+.document-list__link {
+  font-size: 18px;
+  text-decoration: underline;
+}
+
 time {
   font-weight: 500;
   font-size: 18px;
