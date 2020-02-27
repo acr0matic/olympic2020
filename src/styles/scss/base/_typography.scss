@@ -3,5 +3,27 @@
 // -----------------------------------------------------------------------------
 
 body {
-  font-family: 'Montserrat';
+  font-family: "Roboto";
+}
+
+h1 {
+  font-size: 54px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+time {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.nav-link {
+  color: #000000;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

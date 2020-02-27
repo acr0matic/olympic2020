@@ -1,0 +1,40 @@
+#promo {
+  padding-top: 200px;
+
+  .wrapper {
+    justify-content: space-between;
+  }
+}
+
+.promo {
+  &-info {
+    max-width: 50%;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    margin-top: 35px;
+  }
+
+  &__date {
+    margin-bottom: 15px;
+    padding: 5px;
+    background-color: #ff8a6c;
+  }
+
+  &__button {
+    margin-top: 60px;
+  }
+
+  &__logo {
+    width: 100%;
+    max-width: 425px;
+  }
+}

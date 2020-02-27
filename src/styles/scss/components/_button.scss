@@ -1,3 +1,23 @@
 // -----------------------------------------------------------------------------
 // В этом файле стили для компонента "кнопка"
 // -----------------------------------------------------------------------------
+
+.button {
+  width: 250px;
+  height: 60px;
+
+  border: none;
+  transition: transform 0.3s ease;
+  color: #fff;
+  background-color: #f79d27;
+
+  font-size: 18px;
+  line-height: 160%;
+  cursor: pointer;
+
+  &--shadow {
+    &:hover {
+      transform: translateY(5px);
+    }
+  }
+}
