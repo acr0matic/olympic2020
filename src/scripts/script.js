@@ -39,7 +39,12 @@ function stickyNavbar() {
     : header.classList.remove("header-sticky");
 }
 
-var button = document.querySelector("[data-button-nav]")
-button.addEventListener("click", () => {
-  window.open("files/Vneshnee_polozhenie.pdf")
+var buttonNav = document.querySelector("[data-button-nav]")
+buttonNav.addEventListener("click", () => {
+  SmoothScroll("about");
+})
+
+var buttonLink = document.querySelector("[data-button-link]")
+buttonLink.addEventListener("click", () => {
+  window.open("")
 })

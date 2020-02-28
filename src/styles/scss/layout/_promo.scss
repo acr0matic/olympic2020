@@ -9,7 +9,7 @@
 
 .promo {
   &-info {
-    max-width: 60%;
+    max-width: 55%;
   }
 
   &__title {
@@ -26,9 +26,9 @@
 
   &__date {
     display: inline-block;
-    margin: 5px 0;
+    margin: 5px 5px;
     padding: 5px;
-    background-color: #f3722d;
+    background-color: #fddd29;
   }
 
   &__button {

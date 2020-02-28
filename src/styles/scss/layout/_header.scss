@@ -12,6 +12,18 @@
 }
 
 .header {
+  &-logo-wrapper {
+    display: flex;
+    align-items: center;
+    width: 350px;
+
+    transition: all 0.2s ease;
+
+    &:hover {
+      transform: translateX(10px);
+    }
+  }
+
   &-logo {
     width: 100%;
     max-width: 60px;
@@ -19,7 +31,7 @@
   }
 
   &-title {
-    display: block;
+    margin-left: 15px;
     width: 200px;
   }
 

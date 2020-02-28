@@ -1,8 +1,26 @@
-.document-list {
-  list-style-type: disc;
+#documents {
+  background-color: #f8f8f8;
+}
 
+.document {
+  &__text {
+    margin-bottom: 40px;
+  }
+}
+
+.document-list {
   &__item {
-    margin-bottom: 10px;
-    margin-left: 15px;
+    margin-bottom: 25px;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      background-image: url("/src/img/icons/document.svg");
+      background-size: cover;
+      width: 32px;
+      height: 32px;
+    }
   }
 }
