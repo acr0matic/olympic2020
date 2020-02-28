@@ -122,7 +122,6 @@ gulp.task("scripts-build", function() {
       })
     )
     .pipe(concat("script.js"))
-    .pipe(uglify())
     .pipe(rename(config.js_out_min_name))
     .pipe(gulp.dest(config.js_out));
 });
@@ -131,7 +130,6 @@ gulp.task("scripts-build", function() {
 gulp.task("scripts-minify", function() {
   return gulp
     .src(config.js_in)
-    .pipe(uglify())
     .pipe(rename(config.js_out_min_name))
     .pipe(gulp.dest(config.js_out));
 });

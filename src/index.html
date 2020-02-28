@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
   <!-- Базовые мета-теги для поисковиков -->
@@ -58,11 +57,11 @@
     <div class="container">
       <div class="wrapper">
         <a class="header-logo-wrapper" href="#promo">
-          <img src="img/logo/school-faculty.png" alt="" class="header-logo">
+          <img src="img/logo/earth-and-human.png" alt="" class="header-logo">
           <span class="header-title">Земля и человек 2020</span>
         </a>
         <nav class="menu">
-          <ul class="nav">
+          <ul class="nav" id="navigate">
             <li class="nav-item">
               <a href="#about" class="nav-link">Об олимпиаде</a>
             </li>
@@ -96,6 +95,7 @@
             <h1 class="promo__title">Земля и человек 2020</h1>
             <p class="promo__text">Целью Олимпиады является пропаганда знаний и развития интереса обучающихся в средних общеобразовательных учреждениях к наукам о Земле, профориентации юношества, выявления способных учащихся и привлечения их к поступлению в высшие учебные заведения
               по геологическому профилю.</p>
+            <p class="promo__text">Сроки проведения Олимпиады:<time class="promo__date">17.04.2020 - 19.04.2020</time></p>
             <button data-button-nav class="button button-primary  button--shadow promo__button">Об олимпиаде</button>
             <button data-button-link class="button button-secondary button--shadow promo__button">Программа</button>
           </div>
@@ -110,17 +110,14 @@
     <section id="about">
       <div class="container">
         <h2 class="section-title">Об олимпиаде</h2>
+
+        <p class="about__text">С 1999г. в стенах Российского государственного геологоразведочного университета имени Серго Орджоникидзе проходит Всероссийская открытая геологическая олимпиада «Земля и Человек». За это время в олимпиаде приняло участие более 3000 школьников,
+          из которых более половины поступило в профильные геологические ВУЗы, в том числе около 600 в МГРИ</p>
         <p class="about__text">Тематика Олимпиады «Земля и Человек» охватывает тесно взаимосвязанные разделы естествознания, составляющие комплекс наук о Земле: палеонтологию, петрографию, минералогию, кристаллографию, геохимию, геоэкологию, структурную геологию, историческую
           геологию, инженерную геологию, гидрогеологию, геофизику, учение о полезных ископаемых.</p>
-        <p class="about__text">Целью Олимпиады является пропаганда знаний и развития интереса обучающихся в средних общеобразовательных учреждениях к наукам о Земле, профориентации юношества, выявления способных учащихся и привлечения их к поступлению в высшие учебные заведения
-          по геологическому профилю.</p>
         <p class="about__text">Основными конкурсами Олимпиады является геологическое тестирование, интеллектуальный конкурс «Что? Где? Когда?», проводимый в формате известной телевизионной игры, конкурс реферативных и научно-исследовательских работ по геологии и смежным дисциплинам,
           а также конкурс фотографий.</p>
-
         <p class="about__text about__text--important">Внимание! Прием тезисов окончен.</p>
-        <hr>
-        <p class="about__text">Сроки проведения Олимпиады: <time class="promo__date">17.04.2020 - 19.04.2020</time>
-
       </div>
       <!-- /.container -->
     </section>
@@ -128,12 +125,12 @@
     <section id="documents">
       <div class="container">
         <h2 class="section-title">Документы</h2>
-        <p class="document__text">Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Ipsum ручеек рекламных там, заманивший буквенных дорогу переписывается текстов. Переписали единственное ведущими что пор? Обеспечивает!</p>
+        <p class="document__text">Ниже предоставлен список документов для ознакомления.</p>
         <ul class="document-list">
           <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Vneshnee_polozhenie.pdf">Положение о XII Всероссийской открытой геологичекой олимпиаде "Земля и Человек"</a></li>
           <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Referat.pdf">Пример оформления титульного листа реферата</a></li>
           <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/NIR.pdf">Пример оформления титульного листа НИР/УИР</a></li>
-          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Spisok.docx">Список принятых работ</a></li>
+          <li class="document-list__item"><a class="document-list__link" target="_blank" href="files/Spisok.docx">Список участников прошедших в очный тур письменных работ</a></li>
         </ul>
       </div>
       <!-- /.container -->
@@ -171,7 +168,7 @@
 
         <div class="wrapper">
           <div class="partner__card">
-            <a class="partner__link" href="gorgeo.org" target="_blank">
+            <a class="partner__link" href="http://gorgeo.org/" target="_blank">
               <img src="img/logo/gorgeo.png" alt="" class="partner__icon">
             </a>
             <h3 class="partner__title">При содействии Горно-геологического общества <br> (РОО "ГГО")</h3>
@@ -201,7 +198,7 @@
           <div class="contact-info__item">
             <img src="img/icons/mail.svg" class="contact-info__icon"></img>
             <span class="contact-info__title">Почта Олимпиады: </span>
-            <a href="mailto:olympic@geolend.ru" class="contact-info__link">olympic@geolend.ru</a>
+            <a href="mailto:olympic@geolend.ru" class="contact-info__link">olympic@geoland.ru</a>
           </div>
           <!-- /.contact-info__item -->
 
@@ -219,13 +216,13 @@
           <!-- /.contact-info__item -->
 
           <div class="contact-info__item">
-            <span class="contact-info__title">Начальник штаба Олимпиады: </span>
+            <span class="contact-info__title">Начальник штаба Олимпиады (Александр): </span>
             <a href="tel:8(985)888-63-45" class="contact-info__link">+7 (985) 888-63-45</a>
           </div>
           <!-- /.contact-info__item -->
 
           <div class="contact-info__item">
-            <span class="contact-info__title">Вопросы касаемо письменных работ: </span>
+            <span class="contact-info__title">Вопросы касаемо письменных работ (Яна): </span>
             <a href="tel:+7(960)732-99-00" class="contact-info__link">+7 (960) 732-99-00</a>
           </div>
           <!-- /.contact-info__item -->
@@ -280,13 +277,103 @@
     </section>
   </main>
 
+  <div class="modal micromodal-slide" id="modal-table" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <header class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">
+            Программа олимпиады
+          </h2>
+          <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+        </header>
+        <main class="modal__content" id="modal-1-content">
+          <table class="table">
+            <tbody>
+              <tr class="table-head">
+                <th colspan="2">Этап Олимпиады</th>
+                <th rowspan="2">Форма проведения</th>
+                <th rowspan="2">Сроки проведения</th>
+                <th rowspan="2">Место проведения</th>
+              </tr>
+              <tr class="table-head">
+                <td>Этап</td>
+                <td>Конкурс/соревнование</td>
+              </tr>
+              <tr>
+                <td rowspan="3">II</td>
+                <td rowspan="2">Соревнование письменных работ</td>
+                <td>1 тур. Заочная</td>
+                <td>с 19 ноября 2019 г.по 15 января 2020г</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>2 тур. Заочная</td>
+                <td>до 1 марта 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>Конкурс производственных отчетов</td>
+                <td>1 тур. Заочная</td>
+                <td>с 15 января до 1 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td rowspan="5">III</td>
+                <td>Конкурс фотографий</td>
+                <td>Заочная</td>
+                <td>15-17 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>Конкурс -Интеллектуальная геологическая игра "Что? Где? Когда?"</td>
+                <td>Командный конкурс "Что? Где? Когда?", очная форма проведения</td>
+                <td>17-19 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>Соревнование - Тестирование по различным геологическим дисциплинам</td>
+                <td>Геологическоетестирование для школьников, очная форма проведения</td>
+                <td>18 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>Соревнованиеписьменных работ</td>
+                <td>3 тур. Защита работ - очное собеседование</td>
+                <td>18 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td>Конкурспроизводственных отчетов</td>
+                <td>2 тур. Очноесобеседование</td>
+                <td>19 апреля 2020 года</td>
+                <td>МГРИ</td>
+              </tr>
+              <tr>
+                <td colspan="3">Торжественное закрытие Олимпиады</td>
+                <td>19 апреля 2018 года, 17:00</td>
+                <td>МГРИ</td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+        <footer class="modal__footer">
+          <button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">Закрыть</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+
   <!-- Подвал -->
-  <footer></footer>
+  <footer>
+
+  </footer>
 
 
   <!-- Скрипты -->
   <!-- build:js -->
   <script src="scripts/fslightbox.js"></script>
+  <script src="scripts/micromodal.min.js"></script>
+  <script src="scripts/menuspy.min.js"></script>
   <script src="scripts/script.js"></script>
   <!-- endbuild -->
 

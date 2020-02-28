@@ -1,3 +1,5 @@
+MicroModal.init();
+
 const anchors = document.querySelectorAll('a[href*="#"]');
 const anchorButtons = document.querySelectorAll("[data-anchor-button]");
 
@@ -39,12 +41,17 @@ function stickyNavbar() {
     : header.classList.remove("header-sticky");
 }
 
-var buttonNav = document.querySelector("[data-button-nav]")
+var buttonNav = document.querySelector("[data-button-nav]");
 buttonNav.addEventListener("click", () => {
   SmoothScroll("about");
-})
+});
 
-var buttonLink = document.querySelector("[data-button-link]")
+var buttonLink = document.querySelector("[data-button-link]");
 buttonLink.addEventListener("click", () => {
-  window.open("")
-})
+  MicroModal.show("modal-table"); // [1]
+});
+
+var nav = document.getElementById("navigate");
+var ms = new MenuSpy(nav, {
+  activeClass: "nav-item--current"
+});

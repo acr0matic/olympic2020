@@ -2,6 +2,8 @@
   background-color: #f8f8f8;
   background-size: cover;
 
+  padding-top: 150px;
+
   .wrapper {
     justify-content: space-between;
   }
@@ -26,7 +28,8 @@
 
   &__date {
     display: inline-block;
-    margin: 5px 5px;
+    margin: 5px 58px;
+    border-radius: 5px;
     padding: 5px;
     background-color: #fddd29;
   }
