@@ -23,4 +23,11 @@ section {
 
 .section-title {
   margin-bottom: 40px;
+  @include breakpoint(max-width 425px) {
+    text-align: center;
+  }
+}
+
+.text-header {
+  margin-bottom: 20px;
 }

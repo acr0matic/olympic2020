@@ -1,6 +1,7 @@
 .table {
   text-align: left;
   border-collapse: collapse;
+  overflow-x: visible;
 }
 
 table,
@@ -17,6 +18,10 @@ td {
 
 td {
   max-width: 275px;
+
+  @include breakpoint(max-width 425px) {
+    min-width: 110px;
+  }
 }
 
 .table-head {

@@ -850,9 +850,15 @@
                     o(), (n.addRecompense = o);
                   });
             };
+            var mediaX = window.matchMedia("(max-width: 425px)");
             var o = function() {
               document.body.offsetHeight > innerHeight &&
-                (document.body.style.marginRight = t.scrollbarWidth + "px");
+                (document.body.style.marginRight = 17 + "px");
+
+              if (mediaX.matches) {
+                document.body.offsetHeight > innerHeight &&
+                  (document.body.style.marginRight = 0 + "px");
+              }
             };
             n.removeRecompense = function() {
               document.body.style.removeProperty("margin-right");

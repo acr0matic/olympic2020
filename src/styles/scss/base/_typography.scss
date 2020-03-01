@@ -8,10 +8,18 @@ body {
 
 h1 {
   font-size: 60px;
+
+  @include breakpoint(max-width 425px) {
+    text-align: center;
+  }
 }
 
 h2 {
   font-size: 30px;
+
+  @include breakpoint(max-width 425px) {
+    text-align: center;
+  }
 }
 
 h3 {
@@ -19,6 +27,7 @@ h3 {
   font-weight: 400;
 }
 
+li,
 p {
   font-size: 18px;
   line-height: 30px;
@@ -40,10 +49,19 @@ time {
   font-size: 18px;
 }
 
+.date {
+
+}
+
 .nav-link {
   color: #000000;
 
   &:hover {
     text-decoration: underline;
   }
+}
+
+.text-header {
+  font-size: 24px;
+  font-weight: 500;
 }

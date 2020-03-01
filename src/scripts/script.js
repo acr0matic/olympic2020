@@ -18,6 +18,7 @@ for (let anchor of anchors) {
     const blockID = anchor.getAttribute("href").substr(1);
 
     SmoothScroll(blockID);
+    closeMobileMenu();
   });
 }
 

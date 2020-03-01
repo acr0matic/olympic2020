@@ -4,23 +4,28 @@
 
 .document {
   &__text {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 
 .document-list {
   &__item {
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 
     &::before {
       content: "";
-      display: inline-block;
-      vertical-align: middle;
+      display: block;
       margin-right: 10px;
       background-image: url("../../img/icons/document.svg");
       background-size: cover;
       width: 32px;
       height: 32px;
+      float: left;
     }
+  }
+
+  &__link {
+    display: block;
+    overflow: hidden;
   }
 }

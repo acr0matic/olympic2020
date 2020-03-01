@@ -1,9 +1,14 @@
 #partners {
   .wrapper {
+    flex-wrap: wrap;
     justify-content: space-between;
 
     &:nth-child(3) {
       margin-top: 30px;
+
+      @include breakpoint(max-width 425px) {
+        margin-top: 0;
+      }
     }
   }
 }
@@ -21,10 +26,16 @@
 
     text-align: center;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+
+    @include breakpoint(max-width 425px) {
+      width: 50%;
+      margin-bottom: 15px;
+    }
   }
 
   &__link {
     display: block;
+    transition: all 0.3s ease;
 
     &:hover {
       opacity: 0.7;

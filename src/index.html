@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Базовые мета-теги для поисковиков -->
   <title>Заголовок</title>
@@ -79,6 +80,11 @@
             </li>
           </ul>
         </nav>
+        <button id="mobile-menu-open" class="button-mobile">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </button>
       </div>
       <!-- /.wrapper -->
     </div>
@@ -118,6 +124,18 @@
         <p class="about__text">Основными конкурсами Олимпиады является геологическое тестирование, интеллектуальный конкурс «Что? Где? Когда?», проводимый в формате известной телевизионной игры, конкурс реферативных и научно-исследовательских работ по геологии и смежным дисциплинам,
           а также конкурс фотографий.</p>
         <p class="about__text about__text--important">Внимание! Прием тезисов окончен.</p>
+        <p class="about__text about__text--important">Внимание! Прием предварительных заявок команд окончен.</p>
+
+        <hr>
+        <h3 class="text-header">Контрольные даты</h3>
+        <ul class="date-list">
+          <li class="date-list__item"><s><time class="date">22 января</time> - закончен прием тезисов</s></li>
+          <li class="date-list__item"><s><time class="date">25 января</time> - закончен прием предварительных заявок команд</s></li>
+          <li class="date-list__item"><time class="date">1 марта</time> - окончание приема работ</li>
+          <li class="date-list__item"><time class="date">1 марта</time> - окончательная заявка команд</li>
+          <li class="date-list__item"><time class="date">1 апреля</time> - конец приема фотографий</li>
+          <li class="date-list__item"><time class="date">1 апреля</time> - завершение приема заявок и вопросов ЧГК</li>
+        </ul>
       </div>
       <!-- /.container -->
     </section>
@@ -197,21 +215,22 @@
         <div class="contact-info">
           <div class="contact-info__item">
             <img src="img/icons/mail.svg" class="contact-info__icon"></img>
-            <span class="contact-info__title">Почта Олимпиады: </span>
+            <span class="contact-info__title contact-info__title--optional">Почта Олимпиады: </span>
             <a href="mailto:olympic@geolend.ru" class="contact-info__link">olympic@geoland.ru</a>
           </div>
           <!-- /.contact-info__item -->
 
           <div class="contact-info__item">
             <img src="img/icons/web.svg" class="contact-info__icon"></img>
-            <span class="contact-info__title">Сайт МГРИ: </span>
+            <span class="contact-info__title contact-info__title--optional">Сайт МГРИ: </span>
             <a href="mgri-rggru.ru" class="contact-info__link">mgri-rggru.ru</a>
           </div>
           <!-- /.contact-info__item -->
 
           <div class="contact-info__item">
             <img src="img/icons/map.svg" class="contact-info__icon"></img>
-            <span class="contact-info__title">Адрес МГРИ: Москва, ул. Миклухо-Маклая, 23</span>
+            <span class="contact-info__title contact-info__title--optional">Адрес МГРИ: </span>
+            <span class="contact-info__title">Москва, ул. Миклухо-Маклая, 23</span>
           </div>
           <!-- /.contact-info__item -->
 
@@ -303,7 +322,7 @@
                 <td rowspan="3">II</td>
                 <td rowspan="2">Соревнование письменных работ</td>
                 <td>1 тур. Заочная</td>
-                <td>с 19 ноября 2019 г.по 15 января 2020г</td>
+                <td>с 19 ноября 2019г по 15 января 2020г</td>
                 <td>МГРИ</td>
               </tr>
               <tr>
@@ -357,7 +376,7 @@
           </table>
         </main>
         <footer class="modal__footer">
-          <button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">Закрыть</button>
+          <button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Закрыть окно">Закрыть</button>
         </footer>
       </div>
     </div>
@@ -368,12 +387,32 @@
 
   </footer>
 
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-overlay">
+      <div class="mobile-menu-wrapper">
+        <button class="modal__close" id="mobile-menu-close"></button>
+        <nav>
+          <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#about">Об олимпиаде</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#documents">Документы</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#partners">Организаторы</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#contact">Контакты</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#gallery">Фотографии</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- /.mobile-menu-wrapper -->
+    </div>
+    <!-- /.mobile-menu-overlay -->
+  </div>
+  <!-- /.mobile-menu -->
 
   <!-- Скрипты -->
   <!-- build:js -->
   <script src="scripts/fslightbox.js"></script>
   <script src="scripts/micromodal.min.js"></script>
   <script src="scripts/menuspy.min.js"></script>
+  <script src="scripts/mobilemenu.js"></script>
   <script src="scripts/script.js"></script>
   <!-- endbuild -->
 

@@ -5,6 +5,10 @@
     align-items: flex-start;
     justify-content: space-between;
     position: relative;
+
+    @include breakpoint(max-width 425px) {
+      flex-direction: column;
+    }
   }
 }
 
@@ -25,11 +29,36 @@
   background-color: #ffffff;
   box-shadow: 0 5px 15px 0 rgba(97, 51, 7, 0.2);
 
+  @include breakpoint(max-width 425px) {
+    position: relative;
+    width: 90%;
+    transform: translateY(0);
+    margin-bottom: 20px;
+  }
+
   &__item {
     display: flex;
     align-items: center;
 
     margin-bottom: 15px;
+
+    @include breakpoint(max-width 320px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include between(4, 5) {
+      @include breakpoint(max-width 425px) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .contact-info__link {
+          margin-top: 10px;
+        }
+      }
+    }
 
     &:nth-child(4) {
       margin-top: 40px;
@@ -41,9 +70,23 @@
     height: 24px;
     margin-right: 10px;
     object-fit: contain;
+
+    @include breakpoint(max-width 320px) {
+      display: none;
+    }
   }
 
   &__title {
     margin-right: 5px;
+
+    &--optional {
+      @include breakpoint(max-width 425px) {
+        display: none;
+      }
+
+      @include breakpoint(max-width 320px) {
+        display: block;
+      }
+    }
   }
 }
