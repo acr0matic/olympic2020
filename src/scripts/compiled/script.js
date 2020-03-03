@@ -98,3 +98,18 @@ var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
   activeClass: "nav-item--current"
 });
+var mapContainer = document.getElementById("contact-map");
+var map = document.createElement("iframe");
+map.src = "https://yandex.ru/map-widget/v1/?um=constructor%3Ae867490a6779cf560ffb7feece2dde5308d88ee2cc001ba8b63632a163313592&amp;source=constructor";
+map.width = "100%";
+map.height = "500px";
+map.frameBorder = "0";
+var isLoaded = false;
+window.addEventListener("scroll", function () {
+  var rect = mapContainer.getBoundingClientRect();
+
+  if (rect.top <= 2500 && !isLoaded) {
+    mapContainer.appendChild(map);
+    isLoaded = true;
+  }
+});
