@@ -6,9 +6,9 @@
 
   a {
     display: inline-block;
-    overflow: hidden;
     flex-grow: 1;
     width: 20%;
+    overflow: hidden;
     margin: 5px;
 
     @include from-end(2) {

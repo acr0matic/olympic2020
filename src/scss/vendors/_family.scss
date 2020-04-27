@@ -7,7 +7,8 @@
     &:first-child {
       @content;
     }
-  } @else {
+  }
+ @else {
     &:nth-child(-n + #{$num}) {
       @content;
     }
@@ -218,8 +219,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin first-child() {
   &:first-of-type {
-    @content
-  }
+    @content; }
 }
 
 /// Select the last exact child
@@ -227,8 +227,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin last-child() {
   &:last-of-type {
-    @content
-  }
+    @content; }
 }
 
 /// Select all even children.
@@ -303,7 +302,8 @@
         z-index: order-index($i, $index);
         @content;
       }
-    } @else if ($direction == 'backward') {
+    }
+ @else if ($direction == 'backward') {
       &:nth-last-child(#{$i}) {
         z-index: order-index($i, $index);
         @content;

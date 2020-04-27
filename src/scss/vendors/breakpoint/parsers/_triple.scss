@@ -32,5 +32,4 @@
   $parsed: breakpoint-parse-triple-default($string, nth($numbers, 1), nth($numbers, 2));
 
   @return $leader + $parsed;
-
 }

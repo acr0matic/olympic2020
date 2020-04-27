@@ -209,7 +209,7 @@ gulp.task("sitemap", function () {
     .pipe(
       sitemap({
         // Тут нужно указать домен вашего сайта, например https://www.amazon.com/
-        siteUrl: "sample.ru",
+        siteUrl: "http://mgri-olympic2020.ru/",
       })
     )
     .pipe(gulp.dest(config.dist));

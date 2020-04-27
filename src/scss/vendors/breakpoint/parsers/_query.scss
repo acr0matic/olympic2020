@@ -40,7 +40,6 @@
         $query-holder: append($query-holder, $feature-holder, comma);
         @return $query-holder;
       }
-
     }
     // If they're both numbers, we assume it's a double and roll with that
     @else if (type-of(nth($query, 1)) == 'number' and type-of(nth($query, 2)) == 'number') {

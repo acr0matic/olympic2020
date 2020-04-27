@@ -187,7 +187,6 @@ $Memo-Exists: function-exists(memo-get) and function-exists(memo-set);
       $query-print: '#{$query-print} #{$parsed}';
       $first: false;
     }
-
   }
 
   @if ($query-resolution != false) {
