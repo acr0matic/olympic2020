@@ -47,10 +47,6 @@ buttonNav.addEventListener("click", () => {
   SmoothScroll("about");
 });
 
-var buttonLink = document.querySelector("[data-button-link]");
-buttonLink.addEventListener("click", () => {
-  MicroModal.show("modal-table"); // [1]
-});
 
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {

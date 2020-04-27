@@ -90,10 +90,6 @@ var buttonNav = document.querySelector("[data-button-nav]");
 buttonNav.addEventListener("click", function () {
   SmoothScroll("about");
 });
-var buttonLink = document.querySelector("[data-button-link]");
-buttonLink.addEventListener("click", function () {
-  MicroModal.show("modal-table"); // [1]
-});
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
   activeClass: "nav-item--current"
