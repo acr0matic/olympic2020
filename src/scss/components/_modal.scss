@@ -13,7 +13,7 @@
 
 .modal__container {
   box-sizing: border-box;
-  max-width: 90%;
+  max-width: 850px;
   max-height: 100vh;
   padding: 30px;
   background-color: #fff;
@@ -39,9 +39,15 @@
 
 .modal__close {
   background: transparent;
-  outline: none;
   cursor: pointer;
+  outline: none;
   border: 0;
+  transition: color 0.3s ease;
+}
+
+.modal__close:before {
+  content: "\2715";
+  font-size: 24px;
 }
 
 
@@ -55,6 +61,29 @@
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
   overflow: auto;
+
+  h3 {
+    text-align: right;
+    font-weight: 600;
+
+    @include breakpoint(max-width 425px) {
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+}
+
+.modal__footer {
+  @include breakpoint(max-width 425px) {
+    text-align: center;
+  }
+}
+
+.modal-info {
+  background-color: #f1f1f1;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .modal__btn {
@@ -83,6 +112,11 @@
   line-height: 1.15;
   will-change: transform;
   -moz-osx-font-smoothing: grayscale;
+
+  @include breakpoint(max-width 425px) {
+    width: 150px;
+    height: 40px;
+  }
 }
 
 .modal__btn:focus,
@@ -94,6 +128,14 @@
 .modal__btn-primary {
   background-color: #00449e;
   color: #fff;
+}
+
+
+.modal-list__item {
+  margin-left: 10px;
+  &::before {
+    content: "- ";
+  }
 }
 
 @keyframes mmfadeIn {

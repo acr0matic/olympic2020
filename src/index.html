@@ -78,6 +78,9 @@
         <nav class="menu">
           <ul class="nav" id="navigate">
             <li class="nav-item">
+              <a data-button="important-info" href="#" class="nav-link nav-link--important">Важная информация</a>
+            </li>
+            <li class="nav-item">
               <a href="#about" class="nav-link">Об олимпиаде</a>
             </li>
             <li class="nav-item">
@@ -149,9 +152,6 @@
         <p class="about__text">В соответствии с поручением Правительства Российской Федерации и Указом мера Москвы о максимальном сокарещении количества проводимых массовых мероприятий, оргеомитетом XII Всероссийской открытой геологической Олимпиады «Зкмля и Человек» принято
           решение о проведении финала Олимпиады в заочной форме.
         </p>
-
-        <hr class="about__breakline">
-        <p class="about__text about__text--important">Внимание! Олимпиада проводится в заочном формате.</p>
       </div>
       <!-- /.container -->
     </section>
@@ -340,12 +340,47 @@
 
   </footer>
 
+  <div class="modal micromodal-slide" id="modal-info" aria-hidden="true">
+    <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+      <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <div class="modal__header">
+          <h2 class="modal__title" id="modal-1-title">
+            Важная информация
+          </h2>
+          <button class="icon-close" aria-label="Close modal" data-micromodal-close></button>
+        </div>
+        <div class="modal__content" id="modal-1-content">
+          <p>Уважаемые участники XII Всероссийской открытой геологической олимпиады "Земля и Человек"!</p>
+
+          <div class="modal-info">
+            <p>В связи со сложной эпидемиологической ситуацией в Российской Федерации,​ ​​​​​​изменяется время и​ формат проведения финала XII Всероссийской открытой геологической олимпиады «Земля и Человек»:​</p>
+            <ul class="modal-list">
+              <li class="modal-list__item">Тестирование пройдет по интернету 23 мая на сайте МГРИ;</li>
+              <li class="modal-list__item">Подведение итогов соревнований письменных работ и конкурса​ производственных отчетов будет основано только на результатах заочной​ проверки письменных​ работ участников и отчетов команд;</li>
+              <li class="modal-list__item">Отменяется проведение интеллектуального геологического​ конкурса ​ «Что? Где? Когда?»;</li>
+            </ul>
+          </div>
+          <!-- /.modal-info -->
+
+          <p>Результаты финала Олимпиады будут опубликованы на странице Олимпиады на сайте МГРИ.</p>
+          <h3>С Уважением, Оргкомитет Олимпиады</h3>
+          </ul>
+        </div>
+        <div class="modal__footer">
+          <button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Закрыть окно">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div id="mobile-menu" class="mobile-menu">
     <div class="mobile-menu-overlay">
       <div class="mobile-menu-wrapper">
-        <button class="modal__close" id="mobile-menu-close"></button>
+        <button class="icon-close mobile-menu-close" id="mobile-menu-close"></button>
         <nav>
           <ul class="mobile-menu-nav">
+            <li class="mobile-menu-item"><a data-button="important-info" href="#" class="mobile-menu-link nav-link--important">Важная информация</a></li>
             <li class="mobile-menu-item"><a class="mobile-menu-link" href="#about">Об олимпиаде</a></li>
             <li class="mobile-menu-item"><a class="mobile-menu-link" href="#documents">Документы</a></li>
             <li class="mobile-menu-item"><a class="mobile-menu-link" href="#partners">Организаторы</a></li>

@@ -1,10 +1,11 @@
 MicroModal.init();
+MicroModal.show("modal-info");
 
 const anchors = document.querySelectorAll('a[href*="#"]');
 const anchorButtons = document.querySelectorAll("[data-anchor-button]");
 
 for (let button of anchorButtons) {
-  button.addEventListener("click", function(e) {
+  button.addEventListener("click", function (e) {
     e.preventDefault();
     const blockID = button.getAttribute("data-anchor-button").substr(1);
 
@@ -13,7 +14,7 @@ for (let button of anchorButtons) {
 }
 
 for (let anchor of anchors) {
-  anchor.addEventListener("click", function(e) {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const blockID = anchor.getAttribute("href").substr(1);
 
@@ -25,11 +26,11 @@ for (let anchor of anchors) {
 function SmoothScroll(blockID) {
   document.getElementById(blockID).scrollIntoView({
     behavior: "smooth",
-    block: "start"
+    block: "start",
   });
 }
 
-window.onscroll = function() {
+window.onscroll = function () {
   stickyNavbar();
 };
 
@@ -47,26 +48,19 @@ buttonNav.addEventListener("click", () => {
   SmoothScroll("about");
 });
 
-
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
-  activeClass: "nav-item--current"
+  activeClass: "nav-item--current",
 });
 
-var mapContainer = document.getElementById("contact-map");
-var map = document.createElement("iframe");
+var importantButtons = document.querySelectorAll(
+  "[data-button=important-info]"
+);
 
-map.src =
-  "https://yandex.ru/map-widget/v1/?um=constructor%3Ae867490a6779cf560ffb7feece2dde5308d88ee2cc001ba8b63632a163313592&amp;source=constructor";
-map.width = "100%";
-map.height = "500px";
-map.frameBorder = "0";
-
-var isLoaded = false;
-window.addEventListener("scroll", () => {
-  var rect = mapContainer.getBoundingClientRect();
-  if (rect.top <= 2500 && !isLoaded) {
-    mapContainer.appendChild(map);
-    isLoaded = true;
-  }
-});
+for (const button of importantButtons) {
+  if (button.getAttribute("data-button") == "important-info")
+    button.onclick = () => {
+      MicroModal.show("modal-info");
+      closeMobileMenu();
+    };
+}
