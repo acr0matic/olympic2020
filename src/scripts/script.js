@@ -44,9 +44,10 @@ function stickyNavbar() {
 }
 
 var buttonNav = document.querySelector("[data-button-nav]");
-buttonNav.addEventListener("click", () => {
-  SmoothScroll("about");
-});
+if (buttonNav)
+  buttonNav.addEventListener("click", () => {
+    SmoothScroll("about");
+  });
 
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
