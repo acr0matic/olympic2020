@@ -23,12 +23,15 @@
 // 4. Подключение стилей разметки
 @import
   'layout/header',
-  'layout/about',
-  'layout/promo',
-  'layout/partners',
-  'layout/gallery',
-  'layout/mobile-menu',
-  'layout/footer';
+  'layout/footer',
+
+  'layout/index/about',
+  'layout/index/promo',
+  'layout/index/partners',
+  'layout/index/gallery',
+  'layout/index/mobile-menu',
+
+  'layout/portal/hero';
 
 // 5. Подключение стилей компонентов
 @import
