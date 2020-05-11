@@ -1,11 +1,37 @@
 "use strict";
 
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/* global MicroModal */
 MicroModal.init();
+var limit = 2 * 3600 * 1000; // 2 часа
+
+var localStorageInitTime = localStorage.getItem('localStorageInitTime');
+
+if (localStorageInitTime === null) {
+  localStorage.setItem('localStorageInitTime', +new Date());
+} else if (+new Date() - localStorageInitTime > limit) {
+  localStorage.clear();
+  localStorage.setItem('localStorageInitTime', +new Date());
+}
+
+if (localStorage.getItem("modalShow") === null) localStorage.setItem("modalShow", "false");
+var data = localStorage.getItem("modalShow");
+
+if (data == "false") {
+  MicroModal.show("modal-info");
+  localStorage.setItem("modalShow", "true");
+}
+
 var anchors = document.querySelectorAll('a[href*="#"]');
 var anchorButtons = document.querySelectorAll("[data-anchor-button]");
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
+
+var _iterator = _createForOfIteratorHelper(anchorButtons),
+    _step;
 
 try {
   var _loop = function _loop() {
@@ -17,27 +43,17 @@ try {
     });
   };
 
-  for (var _iterator = anchorButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+  for (_iterator.s(); !(_step = _iterator.n()).done;) {
     _loop();
   }
 } catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
+  _iterator.e(err);
 } finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator["return"] != null) {
-      _iterator["return"]();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
-    }
-  }
+  _iterator.f();
 }
 
-var _iteratorNormalCompletion2 = true;
-var _didIteratorError2 = false;
-var _iteratorError2 = undefined;
+var _iterator2 = _createForOfIteratorHelper(anchors),
+    _step2;
 
 try {
   var _loop2 = function _loop2() {
@@ -50,22 +66,13 @@ try {
     });
   };
 
-  for (var _iterator2 = anchors[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+  for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
     _loop2();
   }
 } catch (err) {
-  _didIteratorError2 = true;
-  _iteratorError2 = err;
+  _iterator2.e(err);
 } finally {
-  try {
-    if (!_iteratorNormalCompletion2 && _iterator2["return"] != null) {
-      _iterator2["return"]();
-    }
-  } finally {
-    if (_didIteratorError2) {
-      throw _iteratorError2;
-    }
-  }
+  _iterator2.f();
 }
 
 function SmoothScroll(blockID) {
@@ -87,25 +94,28 @@ function stickyNavbar() {
 }
 
 var buttonNav = document.querySelector("[data-button-nav]");
-buttonNav.addEventListener("click", function () {
+if (buttonNav) buttonNav.addEventListener("click", function () {
   SmoothScroll("about");
 });
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
   activeClass: "nav-item--current"
 });
-var mapContainer = document.getElementById("contact-map");
-var map = document.createElement("iframe");
-map.src = "https://yandex.ru/map-widget/v1/?um=constructor%3Ae867490a6779cf560ffb7feece2dde5308d88ee2cc001ba8b63632a163313592&amp;source=constructor";
-map.width = "100%";
-map.height = "500px";
-map.frameBorder = "0";
-var isLoaded = false;
-window.addEventListener("scroll", function () {
-  var rect = mapContainer.getBoundingClientRect();
+var importantButtons = document.querySelectorAll("[data-button=important-info]");
 
-  if (rect.top <= 2500 && !isLoaded) {
-    mapContainer.appendChild(map);
-    isLoaded = true;
+var _iterator3 = _createForOfIteratorHelper(importantButtons),
+    _step3;
+
+try {
+  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+    var button = _step3.value;
+    if (button.getAttribute("data-button") == "important-info") button.onclick = function () {
+      MicroModal.show("modal-info");
+      closeMobileMenu();
+    };
   }
-});
+} catch (err) {
+  _iterator3.e(err);
+} finally {
+  _iterator3.f();
+}

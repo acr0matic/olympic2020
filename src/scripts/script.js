@@ -1,5 +1,24 @@
+/* global MicroModal */
+
 MicroModal.init();
-MicroModal.show("modal-info");
+
+var limit = 2 * 3600 * 1000; // 2 часа
+var localStorageInitTime = localStorage.getItem("localStorageInitTime");
+if (localStorageInitTime === null) {
+  localStorage.setItem("localStorageInitTime", +new Date());
+} else if (+new Date() - localStorageInitTime > limit) {
+  localStorage.clear();
+  localStorage.setItem("localStorageInitTime", +new Date());
+}
+
+if (localStorage.getItem("modalShow") === null)
+  localStorage.setItem("modalShow", "false");
+
+var data = localStorage.getItem("modalShow");
+if (data == "false") {
+  MicroModal.show("modal-info");
+  localStorage.setItem("modalShow", "true");
+}
 
 const anchors = document.querySelectorAll('a[href*="#"]');
 const anchorButtons = document.querySelectorAll("[data-anchor-button]");
@@ -64,4 +83,12 @@ for (const button of importantButtons) {
       MicroModal.show("modal-info");
       closeMobileMenu();
     };
+}
+
+var parallaxImage = document.getElementById("hero-parallax");
+
+if (parallaxImage) {
+  new simpleParallax(parallaxImage, {
+    scale: 1.5,
+  });
 }
