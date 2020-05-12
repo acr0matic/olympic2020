@@ -89,6 +89,6 @@ var parallaxImage = document.getElementById("hero-parallax");
 
 if (parallaxImage) {
   new simpleParallax(parallaxImage, {
-    scale: 1.5,
+    scale: 1.25,
   });
 }
