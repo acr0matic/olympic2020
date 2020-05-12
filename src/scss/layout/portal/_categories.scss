@@ -22,7 +22,6 @@
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
       border-radius: 10px;
 
-      cursor: pointer;
 
       &:hover .category-image {
         transform: scale(1.05);
@@ -37,7 +36,9 @@
       }
 
       &--active {
-        cursor: default;
+        a {
+          cursor: default;
+        }
 
         .category-image {
           transform: scale(1.05);
