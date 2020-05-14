@@ -82,7 +82,9 @@ gulp.task("html", function () {
     .pipe(
       htmlReplace({
         css: config.css_replace_out,
+        css_relative: "../" + config.css_replace_out,
         js: config.js_replace_out,
+        js_relative: "../" + config.js_replace_out,
       })
     )
     .pipe(

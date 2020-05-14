@@ -230,15 +230,13 @@ function closeMobileMenu() {
 
 MicroModal.init();
 
-var limit =  2 * 3600 * 1000; // 2 часа
-var localStorageInitTime = localStorage.getItem('localStorageInitTime');
+var limit = 2 * 3600 * 1000; // 2 часа
+var localStorageInitTime = localStorage.getItem("localStorageInitTime");
 if (localStorageInitTime === null) {
-    localStorage.setItem('localStorageInitTime', +new Date());
-}
-
-else if(+new Date() - localStorageInitTime > limit) {
-    localStorage.clear();
-    localStorage.setItem('localStorageInitTime', +new Date());
+  localStorage.setItem("localStorageInitTime", +new Date());
+} else if (+new Date() - localStorageInitTime > limit) {
+  localStorage.clear();
+  localStorage.setItem("localStorageInitTime", +new Date());
 }
 
 if (localStorage.getItem("modalShow") === null)
@@ -252,6 +250,22 @@ if (data == "false") {
 
 const anchors = document.querySelectorAll('a[href*="#"]');
 const anchorButtons = document.querySelectorAll("[data-anchor-button]");
+
+const navigationButtons = document.querySelectorAll("[data-button-nav]");
+
+if (navigationButtons)
+  for (const button of navigationButtons) {
+    let value = button.getAttribute("data-button-nav");
+    if (value.charAt(0) == "#") {
+      button.addEventListener("click", () => {
+        SmoothScroll(value.substr(1));
+      });
+    } else {
+      button.addEventListener("click", () => {
+        window.open(value, "_self");
+      });
+    }
+  }
 
 for (let button of anchorButtons) {
   button.addEventListener("click", function (e) {
@@ -292,12 +306,6 @@ function stickyNavbar() {
     : header.classList.remove("header-sticky");
 }
 
-var buttonNav = document.querySelector("[data-button-nav]");
-if (buttonNav)
-  buttonNav.addEventListener("click", () => {
-    SmoothScroll("about");
-  });
-
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
   activeClass: "nav-item--current",
@@ -313,4 +321,95 @@ for (const button of importantButtons) {
       MicroModal.show("modal-info");
       closeMobileMenu();
     };
+}
+
+var parallaxImage = document.getElementById("hero-parallax");
+
+if (parallaxImage) {
+  new simpleParallax(parallaxImage, {
+    scale: 1.25,
+  });
+}
+
+/* global Swiper */
+
+var SwiperBooksContainer = document.querySelector(".swiper-books");
+var SwiperLecturesContainer = document.querySelector(".swiper-lectures");
+
+if (SwiperBooksContainer) {
+  let SwiperBooks = new Swiper(SwiperBooksContainer, {
+    // Optional parameters
+    slidesPerView: 2,
+    spaceBetween: 30,
+
+    pagination: {
+      el: ".swiper-pagination-books",
+    },
+
+    navigation: {
+      nextEl: ".swiper-books-next",
+      prevEl: ".swiper-books-prev",
+    },
+
+    breakpoints: {
+      320: {
+        spaceBetween: 20,
+      },
+
+      720: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  SwiperBooks.init();
+  CheckContollers(SwiperBooks, SwiperBooksContainer);
+}
+
+if (SwiperLecturesContainer) {
+  let SwiperLectures = new Swiper(SwiperLecturesContainer, {
+    slidesPerView: 2,
+    spaceBetween: 30,
+
+    pagination: {
+      el: ".swiper-pagination-lectures",
+    },
+
+    navigation: {
+      nextEl: ".swiper-lectures-next",
+      prevEl: ".swiper-lectures-prev",
+    },
+
+    breakpoints: {
+      320: {
+        spaceBetween: 20,
+      },
+
+      720: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+    },
+  });
+
+  SwiperLectures.init();
+  CheckContollers(SwiperLectures, SwiperLecturesContainer);
+}
+
+function CheckContollers(slider, container) {
+  let mediaQuery = window.matchMedia("(max-width: 425px)");
+
+  let slideCount = slider.slides.length;
+
+  let leftArrow = container.querySelector(".swiper-button-prev");
+  let rightArrow = container.querySelector(".swiper-button-next");
+  let pagination = container.querySelector(".swiper-pagination");
+
+  if (!mediaQuery.matches)
+    if (slideCount == 4) {
+      leftArrow.style.display = "none";
+      rightArrow.style.display = "none";
+      pagination.style.display = "none";
+    }
 }

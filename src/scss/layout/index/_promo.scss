@@ -5,11 +5,19 @@
   padding-top: 150px;
   padding-bottom: 100px;
 
+  @include breakpoint(max-width 425px) {
+    padding-top: 100px;
+  }
+
   .wrapper {
     justify-content: space-between;
 
     @include breakpoint(max-width 425px) {
       flex-direction: column;
+    }
+
+    .button {
+      margin-right: 15px;
     }
   }
 }
@@ -28,6 +36,7 @@
 
     @include breakpoint(max-width 425px) {
       margin: 25px 0;
+      font-size: 42px;
     }
   }
 
@@ -37,6 +46,10 @@
 
   &__text {
     margin-top: 15px;
+
+    @include breakpoint(max-width 425px) {
+      margin-bottom: 30px;
+    }
   }
 
   &__date {

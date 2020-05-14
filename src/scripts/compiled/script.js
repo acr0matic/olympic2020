@@ -10,13 +10,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 MicroModal.init();
 var limit = 2 * 3600 * 1000; // 2 часа
 
-var localStorageInitTime = localStorage.getItem('localStorageInitTime');
+var localStorageInitTime = localStorage.getItem("localStorageInitTime");
 
 if (localStorageInitTime === null) {
-  localStorage.setItem('localStorageInitTime', +new Date());
+  localStorage.setItem("localStorageInitTime", +new Date());
 } else if (+new Date() - localStorageInitTime > limit) {
   localStorage.clear();
-  localStorage.setItem('localStorageInitTime', +new Date());
+  localStorage.setItem("localStorageInitTime", +new Date());
 }
 
 if (localStorage.getItem("modalShow") === null) localStorage.setItem("modalShow", "false");
@@ -29,40 +29,48 @@ if (data == "false") {
 
 var anchors = document.querySelectorAll('a[href*="#"]');
 var anchorButtons = document.querySelectorAll("[data-anchor-button]");
+var navigationButtons = document.querySelectorAll("[data-button-nav]");
 
-var _iterator = _createForOfIteratorHelper(anchorButtons),
-    _step;
+if (navigationButtons) {
+  var _iterator = _createForOfIteratorHelper(navigationButtons),
+      _step;
 
-try {
-  var _loop = function _loop() {
-    var button = _step.value;
-    button.addEventListener("click", function (e) {
-      e.preventDefault();
-      var blockID = button.getAttribute("data-anchor-button").substr(1);
-      SmoothScroll(blockID);
-    });
-  };
+  try {
+    var _loop = function _loop() {
+      var button = _step.value;
+      var value = button.getAttribute("data-button-nav");
 
-  for (_iterator.s(); !(_step = _iterator.n()).done;) {
-    _loop();
+      if (value.charAt(0) == "#") {
+        button.addEventListener("click", function () {
+          SmoothScroll(value.substr(1));
+        });
+      } else {
+        button.addEventListener("click", function () {
+          window.open(value, "_self");
+        });
+      }
+    };
+
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      _loop();
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
   }
-} catch (err) {
-  _iterator.e(err);
-} finally {
-  _iterator.f();
 }
 
-var _iterator2 = _createForOfIteratorHelper(anchors),
+var _iterator2 = _createForOfIteratorHelper(anchorButtons),
     _step2;
 
 try {
   var _loop2 = function _loop2() {
-    var anchor = _step2.value;
-    anchor.addEventListener("click", function (e) {
+    var button = _step2.value;
+    button.addEventListener("click", function (e) {
       e.preventDefault();
-      var blockID = anchor.getAttribute("href").substr(1);
+      var blockID = button.getAttribute("data-anchor-button").substr(1);
       SmoothScroll(blockID);
-      closeMobileMenu();
     });
   };
 
@@ -73,6 +81,29 @@ try {
   _iterator2.e(err);
 } finally {
   _iterator2.f();
+}
+
+var _iterator3 = _createForOfIteratorHelper(anchors),
+    _step3;
+
+try {
+  var _loop3 = function _loop3() {
+    var anchor = _step3.value;
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      var blockID = anchor.getAttribute("href").substr(1);
+      SmoothScroll(blockID);
+      closeMobileMenu();
+    });
+  };
+
+  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+    _loop3();
+  }
+} catch (err) {
+  _iterator3.e(err);
+} finally {
+  _iterator3.f();
 }
 
 function SmoothScroll(blockID) {
@@ -93,29 +124,33 @@ function stickyNavbar() {
   window.pageYOffset > sticky ? header.classList.add("header-sticky") : header.classList.remove("header-sticky");
 }
 
-var buttonNav = document.querySelector("[data-button-nav]");
-if (buttonNav) buttonNav.addEventListener("click", function () {
-  SmoothScroll("about");
-});
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
   activeClass: "nav-item--current"
 });
 var importantButtons = document.querySelectorAll("[data-button=important-info]");
 
-var _iterator3 = _createForOfIteratorHelper(importantButtons),
-    _step3;
+var _iterator4 = _createForOfIteratorHelper(importantButtons),
+    _step4;
 
 try {
-  for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-    var button = _step3.value;
+  for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+    var button = _step4.value;
     if (button.getAttribute("data-button") == "important-info") button.onclick = function () {
       MicroModal.show("modal-info");
       closeMobileMenu();
     };
   }
 } catch (err) {
-  _iterator3.e(err);
+  _iterator4.e(err);
 } finally {
-  _iterator3.f();
+  _iterator4.f();
+}
+
+var parallaxImage = document.getElementById("hero-parallax");
+
+if (parallaxImage) {
+  new simpleParallax(parallaxImage, {
+    scale: 1.25
+  });
 }

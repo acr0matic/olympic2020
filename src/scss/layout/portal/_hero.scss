@@ -20,5 +20,18 @@
   .title {
     margin-top: 30px;
     text-align: center;
+
+    @include breakpoint(max-width 425px) {
+      font-size: 42px;
+      margin-bottom: 30px;
+    }
+
+    @include breakpoint(max-width 375px) {
+      font-size: 36px;
+    }
+
+    @include breakpoint(max-width 320px) {
+      font-size: 32px;
+    }
   }
 }

@@ -5,6 +5,10 @@
 section {
   padding: 25px;
   margin-bottom: 85px;
+
+  @include breakpoint(max-width 425px) {
+    padding: 0;
+  }
 }
 
 .container {
@@ -85,6 +89,10 @@ section {
     animation: rotate 5s linear infinite;
   }
 
+  &-icon-animated-dev {
+    animation: zoom 1s linear infinite;
+  }
+
   &-title {
     color: #ffffff;
     margin-top: 10px;
@@ -101,5 +109,19 @@ section {
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

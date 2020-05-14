@@ -23,6 +23,22 @@ if (data == "false") {
 const anchors = document.querySelectorAll('a[href*="#"]');
 const anchorButtons = document.querySelectorAll("[data-anchor-button]");
 
+const navigationButtons = document.querySelectorAll("[data-button-nav]");
+
+if (navigationButtons)
+  for (const button of navigationButtons) {
+    let value = button.getAttribute("data-button-nav");
+    if (value.charAt(0) == "#") {
+      button.addEventListener("click", () => {
+        SmoothScroll(value.substr(1));
+      });
+    } else {
+      button.addEventListener("click", () => {
+        window.open(value, "_self");
+      });
+    }
+  }
+
 for (let button of anchorButtons) {
   button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -61,12 +77,6 @@ function stickyNavbar() {
     ? header.classList.add("header-sticky")
     : header.classList.remove("header-sticky");
 }
-
-var buttonNav = document.querySelector("[data-button-nav]");
-if (buttonNav)
-  buttonNav.addEventListener("click", () => {
-    SmoothScroll("about");
-  });
 
 var nav = document.getElementById("navigate");
 var ms = new MenuSpy(nav, {
